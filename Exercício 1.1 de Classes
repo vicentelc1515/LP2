@@ -1,0 +1,45 @@
+Código em C:
+
+#include <stdio.h>
+
+typedef struct {
+	// O losango será um quadrado rotacionado (não soube fazer com polígono)
+	int x, y;
+	int w, h;
+	int z; //ângulo de rotação
+} losango;
+
+void print (losango* l){
+	printf("Losango de tamanho (%d, %d) na posicao (%d,%d) e rotacionado %dº graus.\n",
+		l->w,l->h, l->x,l->y, l->z);
+}
+int main(void){
+	losango l1={3,3, 10,10, 45};
+	print(&l1);
+	return 0;
+}
+
+
+
+Código em Java:
+
+public class esferaApp{
+	public static void main (String[] args){
+		esfera esfera1 = new esfera(1,1, 5);
+		esfera1.print();
+	}
+}
+
+class esfera{
+	int x, y;
+	int r; // r é o raio da esfera
+	esfera (int x, int y, int r){
+		this.x = x;
+		this.y = y;
+		this.r = r;
+	}
+	void print(){
+		System.out.format("Esfera da posicao (%d,%d) de raio %d.\n",
+			this.x, this.y, this.r);
+	}
+}
