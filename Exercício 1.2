@@ -1,0 +1,37 @@
+
+
+public class RectApp {
+    public static void main (String[] args) {
+        Rect r1 = new Rect(1,1, 10,10, 3,3);
+        r1.print();
+        System.out.format("\n");
+        r1.area();
+        System.out.format("\n");
+        r1.drag(1,1);
+    }
+}
+class Rect {
+    int x, y;
+    int w, h;
+    int dx, dy; // deslocamento do retângulo
+    Rect (int x, int y, int w, int h, int dx, int dy) {
+        this.x = x;
+        this.y = y;
+        this.w = w;
+        this.h = h;
+        this.dx = dx;
+        this.dy = dy;
+    }
+    void print () {
+        System.out.format("Retangulo de tamanho (%d,%d) na posicao (%d,%d).\n",
+            this.w, this.h, this.x, this.y);
+    }
+    int area (){
+        System.out.format("A area e: %d u.a.\n",w*h);
+        return(this.w*this.h);
+    }
+     void drag (int dx, int dy){
+        System.out.format("O retangulo se deslocou (%d,%d) e sua posicao atual eh (%d,%d).\n",
+         this.dx, this.dy, this.w+this.dx, this.h+this.dy);
+     }
+}
